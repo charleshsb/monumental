@@ -17,7 +17,7 @@ class MonumentsController < ApplicationController
   end
 
   def show
-    @monument.find(params[:id])
+    @monument = Monument.find(params[:id])
   end
 
   def edit
