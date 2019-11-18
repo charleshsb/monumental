@@ -1,12 +1,36 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $dark-purple;
+  height: 110px;
+
+
+  .navbar-collapse {
+    flex-grow: 0;
+
+    .nav-link {
+      color: $white;
+      opacity: 0.8;
+
+      &:hover {
+        color: red;
+      }
+    }
+
+    .nav-link.active {
+      color: $white;
+      opacity: 1;
+    }
+  }
+
+  .navbar-brand img {
+    width: 40px;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+.sticky {
+   position: fixed;
+   top: 0;
+   width: 100%;
+  }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+
