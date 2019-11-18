@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4 offset-4">
+      <h1>Create a new monument</h1>
+      <%= simple_form_for [@monument] do |f| %>
+        <%= f.input :title %>
+        <%= f.input :address %>
+        <%= f.input :description %>
+        <%= f.input :price %>
+        <%= f.input :photo, as: :file %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
