@@ -50,7 +50,7 @@ palace_versailles.save
 
 
 file_tm = URI.open('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80')
-taj_mahal = Monument.new(itle: 'Taj Mahal', address: "Dharmapuri, Forest Colony, Tajganj, Agra, Uttar Pradesh 282001, India", description: "An ivory-white marble Islamic mausoleum on the south bank of the Yamuna river in the Indian city of Agra.", price: "700 000")
+taj_mahal = Monument.new(title: 'Taj Mahal', address: "Dharmapuri, Forest Colony, Tajganj, Agra, Uttar Pradesh 282001, India", description: "An ivory-white marble Islamic mausoleum on the south bank of the Yamuna river in the Indian city of Agra.", price: "700 000")
 taj_mahal.photo.attach(io: file_tm, filename: 'taj_mahal.jpg', content_type: 'image/jpg')
 taj_mahal.save
 
