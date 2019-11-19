@@ -27,9 +27,19 @@
   color: $purple !important;
   border: 1px solid $purple !important;
   font-size: 12px;
-  letter-spacing: 1px;
+  text-align: center;
   text-decoration: none;
   font-weight: bolder;
+
+  // a {
+  //     color: $purple ;
+  //     text-decoration: none;
+  //     &:hover {
+  //       color: $white ;
+  //       background: $purple ;
+  //     }
+
+  // }
 }
 
 .btn-secondary:hover {
@@ -37,6 +47,17 @@
   transition: background 0.3s ease;
   color: $white !important;
   opacity: 0.9;
+    text-decoration: none;
+
 
 }
 
+#btn-width{
+  width: 213px;
+  margin-right: 50 px;
+}
+
+.create-btn-container {
+  display:flex;
+  justify-content: flex-end;
+}
