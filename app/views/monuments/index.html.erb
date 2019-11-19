@@ -7,8 +7,8 @@
         <% @monuments.each do |monument| %>
         <%= link_to(monument_path(monument)) do  %>
             <div class="card-trip">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-              <div class="card-trip-infos">
+              <div><%= monument.photo %></div>
+               <div class="card-trip-infos">
                 <div>
                   <h2><%=monument.title %></h2>
                 </div>
