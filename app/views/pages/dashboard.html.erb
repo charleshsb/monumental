@@ -7,7 +7,7 @@
   <% end  %>
 </ul>
 
-<h2>My monuments</h2>
+<h2>My monuments </h2>
 <ul>
   <% @monuments.each do |monument| %>
     <li><%= link_to monument.title, monument_path(monument) %></li>
