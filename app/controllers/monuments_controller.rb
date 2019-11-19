@@ -5,7 +5,8 @@ class MonumentsController < ApplicationController
   end
 
   def create
-    @monument = Monument.find(params[:id])
+    @monument = Monument.new(monument_params)
+    @monument.user = current_user
     if @monument.save
       redirect_to monument_path(@monument)
     else
@@ -36,7 +37,7 @@ class MonumentsController < ApplicationController
   def destroy
     @monument = Monument.find(params[:id])
     @monument.destroy
-    redirect_to monuments_path
+    redirect_to dashboard_path
   end
 
   private
