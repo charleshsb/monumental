@@ -4,9 +4,22 @@
       <h1>List of all monuments</h1>
       <ul>
         <% @monuments.each do |monument| %>
-          <li><%= link_to monument.title, monument_path(monument) %></li>
+        <%= link_to(monument_path(monument)) do  %>
+            <div class="card-trip">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%=monument.title %></h2>
+                </div>
+                <h2 class="card-trip-pricing"><%= monument.price %>$</h2>
+            </div>
+          </div>
+          <% end %>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
+
+
+
