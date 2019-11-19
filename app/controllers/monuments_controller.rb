@@ -1,4 +1,5 @@
 class MonumentsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def new
     @monument = Monument.new
   end
