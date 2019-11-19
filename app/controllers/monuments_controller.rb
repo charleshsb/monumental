@@ -1,4 +1,5 @@
 class MonumentsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def new
     @monument = Monument.new
   end
@@ -18,6 +19,7 @@ class MonumentsController < ApplicationController
 
   def show
     @monument = Monument.find(params[:id])
+    @booking = Booking.new
   end
 
   def edit

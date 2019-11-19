@@ -11,6 +11,14 @@
         <li><%= @monument.description %></li>
         <li><%= @monument.price %></li>
       </ul>
+
+      <h1>Book your monument</h1>
+      <%= simple_form_for [@monument, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+
       <p><%= link_to "Back to list", monuments_path  %></p>
     </div>
   </div>
