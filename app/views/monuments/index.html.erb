@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-6">
       <h1>List of all monuments</h1>
+      <p><%= link_to "Create a new monument", new_monument_path %></p>
       <ul>
         <% @monuments.each do |monument| %>
           <li><%= link_to monument.title, monument_path(monument) %></li>
