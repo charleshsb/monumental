@@ -3,14 +3,14 @@
 <h2>My bookings</h2>
 <ul>
   <% @bookings.each do |booking| %>
-    <li><%= booking.monument.title %></li>
+    <li><%= link_to booking.monument.title, monument_path(booking.monument) %></li>
   <% end  %>
 </ul>
 
 <h2>My monuments</h2>
 <ul>
   <% @monuments.each do |monument| %>
-    <li><%= monument.title %></li>
+    <li><%= link_to monument.title, monument_path(monument) %></li>
   <% end  %>
 </ul>
 
