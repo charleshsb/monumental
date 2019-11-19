@@ -1,3 +1,15 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @monument.photo.key%>')">
+
+
+
+  <div class="container">
+    <h1>Rent & Enjoy <%= @monument[:title] %></h1>
+
+    <a class="btn btn-flat" href="#">Book now</a>
+  </div>
+</div>
+
+
 <div class="container">
   <div class="row">
     <div class="col-4 offset-4">
@@ -7,10 +19,11 @@
         <%= cl_image_tag photo.key, height: 500, width: 600, crop: :fill %>
       <% end %>
       <ul>
-        <li>@monument.address</li>
-        <li>@monument.description</li>
-        <li>@monument.price</li>
+        <li><%= @monument.address %></li>
+        <li><%= @monument.description %></li>
+        <li><%= @monument.price %></li>
       </ul>
+      <p><%= link_to "Back to list", monuments_path  %></p>
     </div>
   </div>
 </div>
