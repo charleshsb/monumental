@@ -7,5 +7,5 @@ class Monument < ApplicationRecord
   validates :price, presence: true, numericality: true
   # validates :photo, presence: true
   has_many_attached :photos
-  has_one_attached :photo
+  # has_one_attached :photo
 end
