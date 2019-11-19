@@ -19,6 +19,7 @@ class MonumentsController < ApplicationController
 
   def show
     @monument = Monument.find(params[:id])
+    @booking = Booking.new
   end
 
   def edit
