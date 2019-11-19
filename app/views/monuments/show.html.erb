@@ -19,10 +19,11 @@
         <%= cl_image_tag photo.key, height: 500, width: 600, crop: :fill %>
       <% end %>
       <ul>
-        <li>@monument.address</li>
-        <li>@monument.description</li>
-        <li>@monument.price</li>
+        <li><%= @monument.address %></li>
+        <li><%= @monument.description %></li>
+        <li><%= @monument.price %></li>
       </ul>
+      <p><%= link_to "Back to list", monuments_path  %></p>
     </div>
   </div>
 </div>
