@@ -1,0 +1,41 @@
+
+
+.btn-flat {
+  background:$purple;
+  padding: 8px 24px;
+  border-radius: 3px;
+  color: $white !important;
+  font-size: 12px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: bolder;
+
+}
+
+.btn-flat:hover {
+  color: $white !important;
+  background: $purple;
+  opacity: 0.9;
+  transition: background 0.3s ease;
+}
+
+
+.btn-secondary {
+  background:$white;
+  padding: 8px 24px;
+  border-radius: 3px;
+  color: $purple !important;
+  border: 1px solid $purple !important;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.btn-secondary:hover {
+  background: $purple;
+  transition: background 0.3s ease;
+  color: $white !important;
+  opacity: 0.9;
+
+}
