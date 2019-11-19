@@ -14,9 +14,13 @@
     <% end %>
   </div>
 </div>
+<br>
 
 
 <div class="container show-info-container">
+  <div class="back-to-index">
+    <%= link_to "Back to list", monuments_path, class: "btn btn-flat" %>
+  </div>
   <div class="information">
     <div class="description">
       <ul id="list">
@@ -72,6 +76,5 @@
 
       <p><%= link_to "Edit", edit_monument_path(@monument) %></p>
       <p><%= link_to "Delete", monuments_path(@monument), method: :delete, data: { confirm: "Are you sure?" } %></p>
-      <p><%= link_to "Back to list", monuments_path  %></p>
     </div>
 </div>
