@@ -4,7 +4,7 @@
       <h1>List of all monuments</h1>
       <ul>
         <% @monuments.each do |monument| %>
-          <li><%= monument.title %></li>
+          <li><%= link_to monument.title, monument_path(monument) %></li>
         <% end %>
       </ul>
     </div>
