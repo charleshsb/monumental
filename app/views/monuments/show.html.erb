@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
     <div class="col-4 offset-4">
@@ -6,6 +7,7 @@
       <% @monument.photos.each do |photo| %>
         <%= cl_image_tag photo.key, height: 500, width: 600, crop: :fill %>
       <% end %>
+      <div class="container">
       <ul>
         <li><%= @monument.address %></li>
         <li><%= @monument.description %></li>
@@ -19,6 +21,9 @@
         <%= f.submit class: "btn btn-primary" %>
       <% end %>
 
+      </div>
+      <p><%= link_to "Edit", edit_monument_path(@monument) %></p>
+      <p><%= link_to "Delete", monuments_path(@monument), method: :delete, data: { confirm: "Are you sure?" } %></p>
       <p><%= link_to "Back to list", monuments_path  %></p>
     </div>
   </div>
