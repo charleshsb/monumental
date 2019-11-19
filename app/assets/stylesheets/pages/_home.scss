@@ -1,1 +1,7 @@
 // Specific CSS for your home-page
+.img-home {
+  height: 75vh;
+  margin-bottom: -1em;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1561599966-bcfb426f7641?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80');
+  background-position: bottom;
+}
