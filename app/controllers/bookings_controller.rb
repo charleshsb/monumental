@@ -6,8 +6,7 @@ class BookingsController < ApplicationController
     @booking.monument = @monument
     @booking.user = current_user
     if @booking.save
-      # il faudra changer ça et rediriger vers le dashboard quand il sera créé
-      redirect_to monument_path(@monument)
+      redirect_to dashboard_path(@monument.user)
     else
       # il faudra gérer le cas .save FALSE (workflow a définir)
       render "monuments/"
@@ -18,7 +17,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     # il faudra changer ça et rediriger vers le dashboard quand il sera créé
-    redirect_to root_path
+    redirect_to dashboard_path(current_user)
   end
 
   private
