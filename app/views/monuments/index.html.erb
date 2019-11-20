@@ -12,12 +12,12 @@
         <% @monuments.each do |monument| %>
         <%= link_to(monument_path(monument)) do  %>
             <div class="card-trip " >
-              <div style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path monument.photos.first.key %>'); background-size: cover; height: 280px"></div>
-               <div class="card-trip-infos">
+              <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path monument.photos.first.key %>'); background-size: cover; height: 260px"></div>
+              <div class="card-trip-infos">
                 <div>
-                  <h2><%=monument.title %></h2>
+                  <h3 ><%=monument.title %></h3>
                 </div>
-                <h2 class="card-trip-pricing"><%= monument.price %>$</h2>
+                <h5 class="card-trip-pricing"><%= monument.price %>$</h5>
             </div>
           </div>
           <% end %>

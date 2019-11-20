@@ -1,30 +1,52 @@
 <div class="container">
-<h1>Dashboard</h1>
+  <div class="row">
+    <div  class="col-12">
+      <h1>Dashboard</h1>
 
-<h2>My bookings</h2>
-<ul>
-   <div class="cards">
-  <% @bookings.each do |booking| %>
-    <li ><%= link_to booking.monument.title, monument_path(booking.monument) %></li>
-    <div class="card-trip " >
-              <!-- <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path monument.photos.first.key %>')"></div> -->
-              <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80" >
+      <h2>My bookings </h2>
+      <br>
+      <div class="cards">
+        <% @bookings.each do |booking| %>
+        <%= link_to(monument_path(booking.monument)) do  %>
+            <div class="card-trip " >
+              <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.monument.photos.first.key %>'); background-size: cover; height: 220px"></div>
                <div class="card-trip-infos">
                 <div>
-                  <h2><%=monument.title %></h2>
+                  <h3  ><%=booking.monument.title %></h3>
                 </div>
-                <h2 class="card-trip-pricing"><%= monument.price %>$</h2>
+                <h5 class="card-trip-pricing" ><%= booking.monument.price %>$</h5>
             </div>
-          </div>
-  <% end  %>
-</ul>
+                <h4 ><%= booking.start_date.day%>-<%= booking.end_date.day %> <%= booking.end_date.month %> <%= booking.end_date.year %></h4>
 
-<h2>My monuments </h2>
-<ul>
-  <% @monuments.each do |monument| %>
-    <li><%= link_to monument.title, monument_path(monument) %></li>
-  <% end  %>
-</ul>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+<br>
+<br>
+<br>
+    <h2>My monuments </h2>
+    <br>
+    <div class="cards">
+        <% @monuments.each do |monument| %>
+        <%= link_to(monument_path(monument)) do  %>
+            <div class="card-trip " >
+              <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path monument.photos.first.key %>'); background-size: cover; height: 220px"></div>
+               <div class="card-trip-infos">
+                <div>
+                  <h3  ><%=monument.title %></h3>
+                </div>
+                <h5 class="card-trip-pricing" ><%=monument.price %>$</h5>
+            </div>
+
+
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <!-- on peut faire curent_user.bookings, au lieu de la méthode dashboard dans le controlleur -->
