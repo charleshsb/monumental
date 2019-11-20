@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
       redirect_to dashboard_path(@monument.user)
     else
       # il faudra gérer le cas .save FALSE (workflow a définir)
-      render "monuments/"
+      redirect_to monument_path(@monument)
     end
   end
 
