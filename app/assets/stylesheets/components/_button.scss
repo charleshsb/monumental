@@ -48,8 +48,6 @@
   color: $white !important;
   opacity: 0.9;
   text-decoration: none;
-
-
 }
 
 #btn-width{
@@ -60,4 +58,18 @@
 .create-btn-container {
   display:flex;
   justify-content: flex-end;
+}
+
+.btn-link {
+  color: #2B1040;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bolder;
+}
+
+
+.btn-link:hover {
+  color: #2B1040;
+  transition: background 0.3s ease;
+  opacity: 0.9;
 }

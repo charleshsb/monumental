@@ -5,20 +5,19 @@
   padding: 0rem 1rem;
   margin-top: -16px;
 
-  .navbar-collapse {
-    flex-grow: 0;
+.navbar-collapse {
+  flex-grow: 0;
 
-    .nav-link {
-      color: $white;
-      opacity: 0.8;
-      letter-spacing:2px;
+  .nav-link {
+    color: $white;
+    opacity: 0.8;
+    letter-spacing: 2px;
 
-      &:hover {
-        font-weight: bolder;
-        color: $purple;
-      }
-
+    &:hover {
+      font-weight: bolder;
+      color: $purple;
     }
+  }
 
     .nav-link.active {
       color: $white;
@@ -32,9 +31,27 @@
   }
 }
 
-
-#profile-pic-pos{
+.profile-pic-pos{
     padding-right: 20px;
 }
 
+.navbar-links {
+  padding-top: 20px;
+  padding-right: 500px;
+}
 
+.navbar-links a {
+  color: $white;
+  letter-spacing: 2px;
+  opacity: 0.3;
+  text-decoration: none;
+  padding: 0px 10px;
+}
+.navbar-links a:hover {
+  opacity: 1;
+}
+
+.align-text {
+  text-align: right;
+  letter-spacing: 2px;
+}
