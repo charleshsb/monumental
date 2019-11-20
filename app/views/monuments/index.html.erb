@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <div  class="col-12">
-      <h1>All the results that match you</h1>
+      <h1>all the monuments that match you</h1>
       <div class ="create-btn-container mb-5" >
-        <div id="btn-width"><%= link_to "Publish your monument", new_monument_path, class: "btn-secondary" %></div>
+        <div id="btn-width"><%= link_to "publish your monument", new_monument_path, class: "btn-secondary" %></div>
       </div>
 
 
@@ -17,7 +17,8 @@
                 <div>
                   <h3 ><%=monument.title %></h3>
                 </div>
-                <h5 class="card-trip-pricing"><%= monument.price %>$</h5>
+                <h5 class="card-trip-pricing"><%= number_with_delimiter(monument.price) %>$/day</h5>
+              </h5>
             </div>
           </div>
           <% end %>

@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <div  class="col-12">
-      <h1>Dashboard</h1>
+      <h1>my dashboard</h1>
 
-      <h2>My bookings </h2>
+      <h2>my bookings </h2>
       <br>
       <div class="cards">
         <% @bookings.each do |booking| %>
@@ -15,11 +15,12 @@
                   <div>
                     <h3  ><%=booking.monument.title %></h3>
                   </div>
-                  <h5 class="card-trip-pricing" ><%= booking.monument.price %>$</h5>
+                  <h5 class="card-trip-pricing" ><%= number_with_delimiter(booking.monument.price) %>$</h5>
                 </div>
                 <h4 class="pt-2"><%= booking.start_date.strftime("From %d-%m-%Y")%> <%= booking.end_date.strftime("to %d-%m-%Y")%></h4>
               </div>
 
+            </div>
           </div>
           <% end %>
         <% end %>
@@ -27,7 +28,7 @@
 <br>
 <br>
 <br>
-    <h2>My monuments </h2>
+    <h2>my monuments </h2>
     <br>
     <div class="cards">
         <% @monuments.each do |monument| %>
@@ -38,7 +39,7 @@
                 <div>
                   <h3  ><%=monument.title %></h3>
                 </div>
-                <h5 class="card-trip-pricing" ><%=monument.price %>$</h5>
+                <h5 class="card-trip-pricing" ><%= number_with_delimiter(monument.price) %>$</h5>
             </div>
 
 
