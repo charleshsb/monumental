@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-4 offset-4">
-      <h1>Create a new monument</h1>
+      <h1>publish your monument</h1>
       <%= simple_form_for [@monument] do |f| %>
         <%= f.input :title %>
         <%= f.input :address %>
@@ -11,7 +11,7 @@
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit class: "btn btn-primary" %>
       <% end %>
-      <p><%= link_to "Back to list", monuments_path  %></p>
+      <p><%= link_to "back to list", monuments_path  %></p>
     </div>
   </div>
 </div>
