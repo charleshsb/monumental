@@ -10,13 +10,15 @@
         <%= link_to(monument_path(booking.monument)) do  %>
             <div class="card-trip " >
               <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.monument.photos.first.key %>'); background-size: cover; height: 220px"></div>
-               <div class="card-trip-infos">
-                <div>
-                  <h3  ><%=booking.monument.title %></h3>
+              <div class="card-trip-infos-container p-3 ">
+                <div class="card-trip-infos p-0">
+                  <div>
+                    <h3  ><%=booking.monument.title %></h3>
+                  </div>
+                  <h5 class="card-trip-pricing" ><%= booking.monument.price %>$</h5>
                 </div>
-                <h5 class="card-trip-pricing" ><%= booking.monument.price %>$</h5>
-            </div>
-                <h4 ><%= booking.start_date.day%>-<%= booking.end_date.day %> <%= booking.end_date.month %> <%= booking.end_date.year %></h4>
+                <h4 class="pt-2"><%= booking.start_date.strftime("From %d-%m-%Y")%> <%= booking.end_date.strftime("to %d-%m-%Y")%></h4>
+              </div>
 
           </div>
           <% end %>
