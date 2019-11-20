@@ -6,7 +6,6 @@
   border-radius: 3px;
   color: $white !important;
   font-size: 12px;
-  text-decoration: none;
   letter-spacing: 1px;
   font-weight: bolder;
 
@@ -17,16 +16,17 @@
   background: $purple;
   opacity: 0.9;
   transition: background 0.3s ease;
+  text-decoration: none;
 }
 
 
 .btn-secondary {
   background:$white;
-  padding: 8px 24px;
+  padding: 8px 22px;
   border-radius: 3px;
   color: $purple !important;
   border: 1px solid $purple !important;
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
   text-decoration: none;
   font-weight: bolder;
@@ -47,7 +47,7 @@
   transition: background 0.3s ease;
   color: $white !important;
   opacity: 0.9;
-    text-decoration: none;
+  text-decoration: none;
 
 
 }
