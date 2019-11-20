@@ -13,7 +13,14 @@
 
 .calendar {
   padding-right: 40px;
+  background-color: rgba(0,0,0,0.2);
+  padding: 10px;
+
+  form label {
+    color: white;
+  }
 }
+
 
 .title {
   padding-left: 40px;
@@ -34,3 +41,10 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
