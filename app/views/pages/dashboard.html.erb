@@ -14,7 +14,7 @@
                 <div>
                   <h3  ><%=booking.monument.title %></h3>
                 </div>
-                <h5 class="card-trip-pricing" ><%= booking.monument.price %>$</h5>
+                <h5 class="card-trip-pricing" ><%= number_with_delimiter(booking.monument.price) %>$</h5>
             </div>
                 <h4 ><%= booking.start_date.day%>-<%= booking.end_date.day %> <%= booking.end_date.month %> <%= booking.end_date.year %></h4>
 
@@ -36,7 +36,7 @@
                 <div>
                   <h3  ><%=monument.title %></h3>
                 </div>
-                <h5 class="card-trip-pricing" ><%=monument.price %>$</h5>
+                <h5 class="card-trip-pricing" ><%= number_with_delimiter(monument.price) %>$</h5>
             </div>
 
 

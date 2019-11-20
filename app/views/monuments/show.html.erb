@@ -27,7 +27,7 @@
         <br>
         <li><em><%= @monument.address %></em></li>
         <br>
-        <li><%= @monument.price %>$/day</li>
+        <li><%= number_with_delimiter(@monument.price) %>$/day</li>
       </ul>
     </div>
 
