@@ -1,19 +1,23 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%= cl_image_path @monument.photos.first.key, crop: :fill%>')">
-  <div class="title">
-    <h1>rent & enjoy <%= @monument[:title] %></h1>
-    <br>
-  </div>
 
-  <div class="calendar">
+  <div class="form-container">
+    <div class="title col-md-8">
+      <h1>rent & enjoy <%= @monument[:title] %></h1>
+      <br>
+    </div>
 
- <h1>book now</h1>
-    <%= simple_form_for [@monument, @booking] do |f| %>
-      <%= f.input :start_date, as: :date, html5: true %>
-      <%= f.input :end_date, as: :date, html5: true %>
-      <%= f.submit 'book', class: "btn-flat" %>
-    <% end %>
+  <div class="calendar col-md-4">
+   <h1>book now</h1>
+      <%= simple_form_for [@monument, @booking] do |f| %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+        <%= f.submit 'book', class: "btn-flat" %>
+      <% end %>
+    </div>
   </div>
 </div>
+
+
 <br>
 
 <div class="container show-info-container">
