@@ -91,7 +91,7 @@ palace_versailles.save
 
 
 photos_array = []
-photos_array << URI.open('http://blog.philibertvoyages.fr/wp-content/uploads/2017/04/Taj-mahal-istock-JulieanneBirch.jpg')
+photos_array << URI.open('https://img.theculturetrip.com/x/smart/wp-content/uploads/2016/04/6239660891_0d9cddfd4c_o-e1460978259654.jpg')
 photos_array << URI.open('https://www.google.com/maps/about/images/treks/tajmahal4-carousel.jpg')
 photos_array << URI.open('https://cdn.civitatis.com/india/delhi/galeria/exteriores-taj-mahal.jpg')
 taj_mahal = Monument.new(user: sibylle, title: 'Taj Mahal', address: "Dharmapuri, Forest Colony, Tajganj, Agra, Uttar Pradesh 282001, India", description: "An ivory-white marble Islamic mausoleum on the south bank of the Yamuna river in the Indian city of Agra.", price: 700000)
@@ -103,7 +103,7 @@ taj_mahal.save
 
 
 photos_array = []
-photos_array << URI.open('https://cdn.civitatis.com/brasil/rio-de-janeiro/galeria/cristo-redentor-corcovado-brasil.jpg')
+photos_array << URI.open('https://www.visitriodejaneiro.city/wp-content/uploads/2016/07/Panoramica-del-Cristo-Redentor.png')
 photos_array << URI.open('https://i.ytimg.com/vi/dYA5O1FMkbE/maxresdefault.jpg')
 photos_array << URI.open('https://i.pinimg.com/originals/a9/95/a1/a995a10073e87efd877b76ccc8729ccd.jpg')
 cristo_redentor = Monument.new(user: sibylle, title: 'Cristo Redentor', address: "Corcovado Mountain, Tijuca Forest National Park, Rio de Janeiro, Brazil", description: "An Art Deco statue of Jesus Christ in Rio de Janeiro, created by French sculptor Paul Landowski. The statue weighs 635 metric tons (625 long, 700 short tons), and is located at the peak of the 700-metre (2,300 ft) Corcovado mountain, the statue has become a cultural icon of both Rio de Janeiro and Brazil, and is listed as one of the New7Wonders of the World.", price: 600000)

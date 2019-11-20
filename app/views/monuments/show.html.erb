@@ -31,17 +31,18 @@
       </ul>
     </div>
 
-
-    <div class="siema">
-      <% @monument.photos.each do |photo| %>
-      <%= cl_image_tag photo.key %>
-      <% end %>
-    </div>
-    <div class="button">
+    <div class="siema-container">
+      <div class="siema">
+        <% @monument.photos.each do |photo| %>
+        <%= cl_image_tag photo.key %>
+        <% end %>
+      </div>
+      <div class="button">
         <button class="prev">prev</button>
         <button class="next">next</button>
       </div>
     </div>
+
 
     </div>
   </div>
