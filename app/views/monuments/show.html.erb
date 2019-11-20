@@ -10,12 +10,11 @@
     <%= simple_form_for [@monument, @booking] do |f| %>
       <%= f.input :start_date, as: :date, html5: true %>
       <%= f.input :end_date, as: :date, html5: true %>
-      <%= f.submit class: "btn-flat" %>
+      <%= f.submit 'book', class: "btn-flat" %>
     <% end %>
   </div>
 </div>
 <br>
-
 
 <div class="container show-info-container">
   <div class="back-to-index">
