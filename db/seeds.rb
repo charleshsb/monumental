@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "starting seed"
+Booking.destroy_all
 Monument.destroy_all
 User.destroy_all
 
