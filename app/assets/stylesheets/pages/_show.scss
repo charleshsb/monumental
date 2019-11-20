@@ -50,3 +50,14 @@
 label {
   color: $white;
 }
+
+.prev, .next {
+  background: #2E1545;
+  padding: 8px 24px;
+  border-radius: 3px;
+  color: $white !important;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bolder;
+}
+
