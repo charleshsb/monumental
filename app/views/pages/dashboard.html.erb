@@ -1,17 +1,62 @@
-<h1>My dashboard</h1>
+<div class="container">
+  <div class="row">
+    <div  class="col-12">
+      <h1>Dashboard</h1>
 
-<h2>My bookings</h2>
-<ul>
-  <% @bookings.each do |booking| %>
-    <li><%= link_to booking.monument.title, monument_path(booking.monument) %></li>
-  <% end  %>
-</ul>
+      <h2>My bookings </h2>
+      <br>
+      <div class="cards">
+        <% @bookings.each do |booking| %>
+        <%= link_to(monument_path(booking.monument)) do  %>
+            <div class="card-trip " >
+              <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.monument.photos.first.key %>'); background-size: cover; height: 220px"></div>
+               <div class="card-trip-infos">
+                <div>
+                  <h3  ><%=booking.monument.title %></h3>
+                </div>
+                <h5 class="card-trip-pricing" ><%= booking.monument.price %>$</h5>
+            </div>
+                <h4 ><%= booking.start_date.day%>-<%= booking.end_date.day %> <%= booking.end_date.month %> <%= booking.end_date.year %></h4>
 
-<h2>My monuments </h2>
-<ul>
-  <% @monuments.each do |monument| %>
-    <li><%= link_to monument.title, monument_path(monument) %></li>
-  <% end  %>
-</ul>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+<br>
+<br>
+<br>
+    <h2>My monuments </h2>
+    <br>
+    <div class="cards">
+        <% @monuments.each do |monument| %>
+        <%= link_to(monument_path(monument)) do  %>
+            <div class="card-trip " >
+              <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path monument.photos.first.key %>'); background-size: cover; height: 220px"></div>
+               <div class="card-trip-infos">
+                <div>
+                  <h3  ><%=monument.title %></h3>
+                </div>
+                <h5 class="card-trip-pricing" ><%=monument.price %>$</h5>
+            </div>
+
+
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
 <!-- on peut faire curent_user.bookings, au lieu de la méthode dashboard dans le controlleur -->
+
+
+
+
+

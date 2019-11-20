@@ -8,11 +8,38 @@ font-weight:bolder;
 }
 
 h2{
+  margin-left: 9px;
   color: $middle-gray;
   text-decoration: none;
+  font-size: 16px;
 }
 
+//title
+h3 {
+font-size: 17px;
+color: $purple;
+
+}
+
+// title date
+h4 {
+font-weight: 500;
+color: $light-gray;
+font-size:16px;
+}
+
+ // title prix
+h5 {
+color: $middle-gray;
+font-weight: bold;
+font-size:15px;
+}
 
 #background {
   background-color: $white;
 }
+
+
+
+
+
