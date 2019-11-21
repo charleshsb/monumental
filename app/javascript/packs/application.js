@@ -1,5 +1,6 @@
 import "bootstrap";
 import Siema from 'siema';
+import "../plugins/flatpickr"
 
 const mySiema = new Siema({
   selector: '.siema',
