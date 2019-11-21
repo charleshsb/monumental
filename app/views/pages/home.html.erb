@@ -1,6 +1,22 @@
-<div class="banner img-home">
-  <div class="title-home">
-    <div><h1>welcome to monumental</h1></div>
-    <div class="btn-home"><%= link_to "DISCOVER MONUMENTS", monuments_path, class: "btn-flat" %></div>
+<div class="banner img-home ">
+
+  <div class="title-home col-6 offset-3">
+    <h1 class= "text-center mb-3">Welcome to <span class="text-highlighted">monumental</span></h1>
+    <h7 class ="mb-5">Go monumental. Rent a monument.</h7>
+
+    <div class="d-flex justify-content-center bd-highlight mt-3">
+      <div  class = "col-10 p-2 bd-highlight">
+        <%= form_tag monuments_path, method: :get do %>
+          <%= text_field_tag :query, params[:query],placeholder: "Find a monument", class: "form-control mb-2 search-test home "%>
+      </div>
+      <div class = "p-2 bd-highlight">
+        <%= image_submit_tag("zoom-2.png", class: 'btn-flat search-btn-flat', alt: 'search')%>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="btn-home">
+      <%= link_to "DISCOVER ALL MONUMENTS", monuments_path, class: 'btn-link home' %>
+    </div>
   </div>
 </div>

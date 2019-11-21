@@ -1,0 +1,14 @@
+.search-test {
+  border-radius: 3px;
+  border: 1px solid $purple;
+  font-weight:lighter;
+  color: $purple;
+}
+
+.search-test.home {
+  color: $dark-gray;
+  background: $white;
+  opacity:0.6;
+  display: inline-block;
+
+  }
