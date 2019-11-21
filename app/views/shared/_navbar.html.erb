@@ -18,10 +18,11 @@
         <li class="nav-item dropdown profile-pic-pos">
           <%= image_tag "Pripri.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "dashboard", dashboard_path, class: "dropdown-item " %>
-            <%= link_to "settings", dashboard_path, class: "dropdown-item " %>
-            <%= link_to "account", dashboard_path, class: "dropdown-item " %>
-            <%= link_to "sign out", destroy_user_session_path, method: :delete,  class: "dropdown-item" %>
+            <%= link_to "hey #{current_user.first_name}", dashboard_path, class: "dropdown-users" %>
+            <%= link_to "your dashboard", dashboard_path, class: "dropdown-items " %>
+            <%= link_to "settings", dashboard_path, class: "dropdown-items " %>
+            <%= link_to "your account", dashboard_path, class: "dropdown-items " %>
+            <%= link_to "sign out", destroy_user_session_path, method: :delete,  class: "dropdown-items" %>
           </div>
         </li>
       </ul>
