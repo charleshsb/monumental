@@ -18,6 +18,7 @@
                   <h5 class="card-trip-pricing" ><%= number_with_delimiter(booking.monument.price) %>$</h5>
                 </div>
                 <h4 class="pt-2"><%= booking.start_date.strftime("From %d-%m-%Y")%> <%= booking.end_date.strftime("to %d-%m-%Y")%></h4>
+                <h4 class="pt-2"><%= booking.total_price %></h4>
               </div>
 
             </div>
