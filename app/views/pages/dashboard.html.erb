@@ -1,25 +1,23 @@
 <div class="container">
   <div class="row">
     <div  class="col-12">
-      <h1>my dashboard</h1>
 
-      <h2>my bookings </h2>
+      <h2 class="mt-5">my bookings </h2>
       <br>
       <div class="cards">
         <% @bookings.each do |booking| %>
         <%= link_to(monument_path(booking.monument)) do  %>
-            <div class="card-trip " >
-              <div style="background-image: url('<%= cl_image_path booking.monument.photos.first.key %>'); background-size: cover; height: 220px"></div>
-              <div class="card-trip-infos-container p-3 ">
-                <div class="card-trip-infos p-0">
-                  <div>
-                    <h3  ><%=booking.monument.title %></h3>
-                  </div>
-                  <h5 class="card-trip-pricing" ><%= number_with_delimiter(booking.monument.price) %>$</h5>
+          <div class="card-trip " >
+            <div style="background-image: url('<%= cl_image_path booking.monument.photos.first.key %>'); background-size: cover; height: 220px">
+            </div>
+            <div class="card-trip-infos-container p-3 ">
+              <div class="card-trip-infos p-0">
+                <div>
+                  <h3  ><%=booking.monument.title %></h3>
                 </div>
-                <h4 class="pt-2"><%= booking.start_date.strftime("From %d-%m-%Y")%> <%= booking.end_date.strftime("to %d-%m-%Y")%></h4>
+                <h5 class="card-trip-pricing" ><%= number_with_delimiter(booking.monument.price) %>$</h5>
               </div>
-
+              <h4 class="pt-2"><%= booking.start_date.strftime("From %d-%m-%Y")%> <%= booking.end_date.strftime("to %d-%m-%Y")%></h4>
             </div>
           </div>
           <% end %>
