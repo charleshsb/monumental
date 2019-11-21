@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.monument = @monument
     @booking.user = current_user
+    @booking.total_price = (@booking.end_date - @booking.start_date)/86400*@monument.price.to_i
     if @booking.save
       redirect_to dashboard_path(@monument.user)
     else
