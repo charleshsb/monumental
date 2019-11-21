@@ -9,7 +9,7 @@
         <% @bookings.each do |booking| %>
         <%= link_to(monument_path(booking.monument)) do  %>
             <div class="card-trip " >
-              <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.monument.photos.first.key %>'); background-size: cover; height: 220px"></div>
+              <div style="background-image: url('<%= cl_image_path booking.monument.photos.first.key %>'); background-size: cover; height: 220px"></div>
               <div class="card-trip-infos-container p-3 ">
                 <div class="card-trip-infos p-0">
                   <div>
