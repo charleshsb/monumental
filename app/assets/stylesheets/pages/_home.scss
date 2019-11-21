@@ -2,19 +2,25 @@
 .img-home {
   height: 75vh;
   margin-bottom: -1em;
-  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1561599966-bcfb426f7641?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80');
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1561599966-bcfb426f7641?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80');
   background-position: bottom;
 }
 
 .title-home {
   color: $white;
-  letter-spacing: 6px;
-  margin-left: 4%;
-  position: absolute;
-  margin-top: -3%;
+  letter-spacing: 2px;
+ text-align: center;
+
 }
 
 .btn-home {
-  position: relative;
-  padding-top: 4%;
+  text-align: center;
+
 }
+
+.text-highlighted {
+  background-color: $purple;
+  padding: 8px;
+  color :$dark-gray;
+}
+

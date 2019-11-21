@@ -8,4 +8,10 @@ class Monument < ApplicationRecord
   # validates :photo, presence: true
   has_many_attached :photos
   # has_one_attached :photo
+  include PgSearch::Model
+  pg_search_scope :search_by_title_and_address,
+    against: [:title, :address],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
