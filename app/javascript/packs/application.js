@@ -16,6 +16,5 @@ const mySiema = new Siema({
   onChange: () => {},
   });
 
-document.querySelector('.prev').addEventListener('click', () => mySiema.prev());
-document.querySelector('.next').addEventListener('click', () => mySiema.next());
+setInterval(() => mySiema.next(), 3000)
 
