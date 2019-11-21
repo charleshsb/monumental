@@ -22,9 +22,8 @@
       <div class="cards">
         <% @monuments.each do |monument| %>
         <%= link_to(monument_path(monument)) do  %>
-          <div class="card-trip " >
-              <div style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path monument.photos.first.key %>'); background-size: cover; height: 260px">
-              </div>
+            <div class="card-trip " >
+              <div style="background-image: url('<%= cl_image_path monument.photos.first.key %>'); background-size: cover; height: 260px"></div>
               <div class="card-trip-infos">
                 <h3 ><%=monument.title %></h3>
                 <h5 class="card-trip-pricing"><%= number_with_delimiter(monument.price) %>$/day</h5>

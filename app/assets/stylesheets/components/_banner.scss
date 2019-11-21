@@ -17,7 +17,11 @@
   padding: 10px;
 
   form label {
-    color: white;
+    color: $white;
+  }
+
+  input {
+    width: auto;
   }
 }
 
