@@ -9,18 +9,20 @@
   </div>
 
   <div class="calendar col-md-4">
-    <h1>book now</h1>
+    <h1 class="white">book now</h1>
     <%= simple_form_for [@monument, @booking] do |f| %>
     <%= f.input :start_date, as: :date, html5: true %>
     <%= f.input :end_date, as: :date, html5: true %>
-    <%= f.submit 'book', class: "btn-flat" %>
+    <%= f.submit 'book', class: "btn-flat blanc" %>
     <% end %>
   </div>
   <br>
 
   <div class="container show-info-container">
     <div class="back-to-index">
+      <%= image_tag("go.png")%>
       <%= link_to "back to list", monuments_path, class: "btn-link" %>
+
     </div>
     <br>
     <div class="information">
