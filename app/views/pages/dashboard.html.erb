@@ -1,61 +1,62 @@
 <div class="container">
   <div class="row">
     <div  class="col-12">
-
       <h2 class="mt-3">my bookings </h2>
       <br>
       <div class="cards">
         <% @bookings.each do |booking| %>
-        <%= link_to(monument_path(booking.monument)) do  %>
           <div class="card-trip" >
-            <div style="background-image: url('<%= cl_image_path booking.monument.photos.first.key %>'); background-size: cover; height: 220px">
-            </div>
-            <div class="card-trip-infos-container p-3 align-items-center">
-              <div class="card-trip-infos p-0">
-                <div>
-                  <h3  ><%=booking.monument.title %></h3>
-                </div>
-                <h5 class="card-trip-pricing" ><%= number_with_delimiter(booking.monument.price) %>$</h5>
+            <%= link_to(monument_path(booking.monument)) do  %>
+              <div style="background-image: url('<%= cl_image_path booking.monument.photos.first.key %>'); background-size: cover; height: 220px">
               </div>
-              <div class="d-flex justify-content-between align-items-center">
-                <h4 class="pt-2 justify-center"><%= booking.start_date.strftime("%d %b")%> <%= booking.end_date.strftime("- %d")%></h4>
-                <div>
-                  <%= link_to "cancel", booking_path(booking), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-secondary" %>
+              <div class="card-trip-infos-container p-3 align-items-center">
+                <div class="card-trip-infos p-0">
+                  <div>
+                    <h3><%=booking.monument.title %></h3>
+                  </div>
+                  <h5 class="card-trip-pricing" ><%= number_with_delimiter(booking.monument.price) %>$</h5>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h4 class="pt-2 justify-center"><%= booking.start_date.strftime("%d %b")%> <%= booking.end_date.strftime("- %d")%></h4>
+                  <div>
+                    <%= link_to "cancel", booking_path(booking), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-secondary" %>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           </div>
-          <% end %>
         <% end %>
       </div>
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
+
     <h2>my monuments </h2>
     <br>
     <div class="cards">
-        <% @monuments.each do |monument| %>
+      <% @monuments.each do |monument| %>
         <%= link_to(monument_path(monument)) do  %>
-            <div class="card-trip " >
-              <div style="background-image: url('<%= cl_image_path monument.photos.first.key %>'); background-size: cover; height: 220px"></div>
-               <div class="card-trip-infos">
-                <div>
-                  <h3  ><%=monument.title %></h3>
-                </div>
-                <h5 class="card-trip-pricing" ><%= number_with_delimiter(monument.price) %>$</h5>
+          <div class="card-trip " >
+            <div style="background-image: url('<%= cl_image_path monument.photos.first.key %>'); background-size: cover; height: 220px"></div>
+            <div class="card-trip-infos">
+              <div>
+                <h3  ><%=monument.title %></h3>
+              </div>
+              <h5 class="card-trip-pricing" ><%= number_with_delimiter(monument.price) %>$</h5>
             </div>
-
-
           </div>
-          <% end %>
         <% end %>
-      </div>
+      <% end %>
+    </div>
 
     </div>
   </div>
 </div>
 
 <!-- on peut faire curent_user.bookings, au lieu de la méthode dashboard dans le controlleur -->
+
+
+
 
 
 
