@@ -3,7 +3,7 @@ import Siema from 'siema';
 const initSiema = () => {
   const mySiema = new Siema({
     selector: '.siema',
-    duration: 200,
+    duration: 150,
     easing: 'ease-out',
     perPage: 1,
     startIndex: 0,
@@ -16,7 +16,7 @@ const initSiema = () => {
     onChange: () => {},
     });
 
-  setInterval(() => mySiema.next(), 1000)
+  setInterval(() => mySiema.next(), 3000)
 }
 
 
