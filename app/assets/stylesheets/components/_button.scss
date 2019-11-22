@@ -75,16 +75,23 @@
   font-weight: bolder;
 
 }
-.btn-link.home {
-  color:$white;
-  font-size: 16px;
-  text-decoration: underline;
-
-}
 
 
 .btn-link:hover {
   color: #2B1040;
   transition: background 0.3s ease;
   opacity: 0.9;
+}
+
+.btn-home {
+  color:$white;
+  font-size: 16px;
+  text-decoration: underline;
+  letter-spacing:1px;
+
+}
+
+.btn-home:hover {
+  color:$purple;
+
 }

@@ -7,7 +7,7 @@
 
 .title-home {
   color: $white;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
  text-align: center;
 
 }
@@ -18,9 +18,10 @@
 }
 
 .text-highlighted {
-  background-color: $purple;
-  padding: 8px;
-  color :$dark-gray;
+  background-color: rgba(24, 27, 32, 0.9);
+  padding: 7px;
+  color :$white;
+
 }
 
 .siema-home-container {
@@ -37,3 +38,12 @@
   width:100%;
 }
 
+.text-home{
+  margin:0 auto;
+  width:100%;
+}
+
+.gradient {
+  background-color: $dark-purple;
+
+}
