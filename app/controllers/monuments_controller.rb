@@ -26,6 +26,7 @@ class MonumentsController < ApplicationController
     @monument = Monument.find(params[:id])
     @booking = Booking.new
     @user = current_user
+    @monuments = Monument.all
   end
 
   def edit

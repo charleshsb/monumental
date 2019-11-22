@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%= cl_image_path @monument.photos.first.key, crop: :fill%>')">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url('<%= cl_image_path @monument.photos.first.key, crop: :fill%>')">
 
   <div class="form-container">
     <div class="title col-md-9">
@@ -16,42 +16,55 @@
       <% end %>
     </div>
   </div>
-</div>
 
+  <div class="container show-info-container">
+    <div class="back-to-index">
+      <%= image_tag("go.png")%>
+      <%= link_to "back to list", monuments_path, class: "btn-link" %>
 
-<br>
-
-<div class="container show-info-container">
-  <div class="back-to-index">
-    <%= link_to "back to list", monuments_path, class: "btn-link" %>
-  </div>
-  <div class="information">
-    <div class="description">
-      <ul id="list">
-        <li><%= @monument.description %></li>
-        <br>
-        <li><em><%= @monument.address %></em></li>
-        <br>
-        <li><%= number_with_delimiter(@monument.price) %>$/day</li>
-      </ul>
     </div>
+    <br>
+    <div class="information">
+      <div class="description mr-4">
+        <ul id="list">
+          <h2><strong><%= @monument.title %></strong></h2>
+          <br>
+          <li><h6><%= @monument.description %></h6></li>
+          <br>
+          <li><em><%= @monument.address %></em></li>
+          <br>
+          <li><strong><%= number_with_delimiter(@monument.price) %>$/day</strong></li>
+        </ul>
+      </div>
 
-    <div class="siema-container">
-      <div class="siema">
-        <% @monument.photos.each do |photo| %>
-        <%= cl_image_tag photo.key %>
+      <div class="siema-container">
+        <div class="siema siema-show">
+          <% @monument.photos.each do |photo| %>
+          <%= cl_image_tag photo.key %>
+          <% end %>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="selection mr-4">
+        <h2>other monuments you may like</h2>
+        <br>
+        <% @monuments.sample(4).each do |monument| %>
+          <%= link_to(monument_path(monument)) do  %>
+            <div class="card-product">
+              <img src= '<%= cl_image_path monument.photos.first.key %>'>
+                <div class="card-product-infos">
+                  <h3 ><%=monument.title %></h3>
+                  <h5 class="price"><%= number_with_delimiter(monument.price) %>$/day</h5>
+                </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
-      <div class="button">
-        <button class="prev">prev</button>
-        <button class="next">next</button>
-      </div>
-    </div>
-    </div>
   </div>
 </div>
-<br>
-
 <div class="container">
   <div class="row">
     <div class="col-4 offset-4">
@@ -73,21 +86,3 @@
 </div>
 
 <div id="monument" data-price="<%= @monument.price %>"></div>
-
-
-
-<!--   <div class="row">
-    <div class="col-4 offset-4"> -->
-
-      <%#= cl_image_tag @monument.photo.key, height: 500, width: 600, crop: :fill %>
-      <%# @monument.photos.each do |photo| %>
-        <%#= cl_image_tag photo.key, height: 500, width: 600, crop: :fill %>
-      <%# end %>
-
-
-
-
-    <!--   <p><%#= link_to "Edit", edit_monument_path(@monument) %></p>
-      <p><%#= link_to "Delete", monuments_path(@monument), method: :delete, data: { confirm: "Are you sure?" } %></p>
-    </div>
-</div> -->

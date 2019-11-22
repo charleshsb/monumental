@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
     <div  class="col-12">
-        <div class="d-flex flex-row bd-highlight mt-3">
-          <div  class = "col-5 p-2 bd-highlight">
+        <div class="d-flex flex-row bd-highlight mt-3  ">
+          <div  class = "col-5 p-2 bd-highlight align-margin">
             <%= form_tag monuments_path, method: :get do %>
-              <%= text_field_tag :query, params[:query], class: "form-control mb-2 search-test",placeholder: "Find a monument"%>
+              <%=text_field_tag :query, params[:query], class: "form-control mb-2 search-test",placeholder: "Find a monument"%>
           </div>
           <div class = "p-2 bd-highlight">
             <%= image_submit_tag("zoom-2.png", class: 'btn-flat search-btn-flat', alt: 'search')%>
@@ -13,13 +13,13 @@
         </div>
 
         <div class ="create-btn-container mb-1 d-flex justify-content-between align-items-center" >
-          <h1>all the monuments that match you</h1>
+          <h1> <%= pluralize @monuments.size, "result"%> for your monumental research</h1>
           <div id="btn-width">
             <%= link_to "publish your monument", new_monument_path, class: "btn-secondary" %>
           </div>
         </div>
 
-      <div class="cards">
+      <div class="cards mb-3">
         <% @monuments.each do |monument| %>
         <%= link_to(monument_path(monument)) do  %>
             <div class="card-trip " >
@@ -32,6 +32,7 @@
           <% end %>
         <% end %>
       </div>
+      <br>
     </div>
   </div>
 </div>

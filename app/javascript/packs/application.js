@@ -1,9 +1,11 @@
 import "bootstrap";
-import { mySiema } from "../plugins/siema";
+import { initSiema } from "../plugins/siema";
 import { initFlatpickr } from "../plugins/flatpickr";
 import { priceForModal, confirmBooking } from "../plugins/modal";
+import { toggleTabs } from "../plugins/tabs";
 
 initFlatpickr();
-// mySiema();
 priceForModal();
 confirmBooking();
+initSiema();
+toggleTabs();

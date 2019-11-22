@@ -1,56 +1,90 @@
-<div class="container">
+<div class="container full-screen">
   <div class="row">
-    <div  class="col-12">
+    <div class="col-12">
 
-      <h2 class="mt-5">my bookings </h2>
-      <br>
-      <div class="cards">
-        <% @bookings.each do |booking| %>
-        <%= link_to(monument_path(booking.monument)) do  %>
-          <div class="card-trip " >
-            <div style="background-image: url('<%= cl_image_path booking.monument.photos.first.key %>'); background-size: cover; height: 220px">
-            </div>
-            <div class="card-trip-infos-container p-3 ">
-              <div class="card-trip-infos p-0">
-                <div>
-                  <h3  ><%=booking.monument.title %></h3>
+      <ul class="nav nav-tabs list-inline tabs-underlined format-onglets" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="tab-underlined nav-linkd active" id="home-tab onglet-color" style="color: #3D3D3D;" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">my bookings</a>
+        </li>
+        <li class="nav-item">
+          <a class="tab-underlined nav-linkd" id="profile-tab onglet-color" style="color: #3D3D3D;" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">my monuments</a>
+        </li>
+      </ul>
+
+      <div class="tab-content marge-haute" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="cards">
+            <% if !@bookings.empty? %>
+              <% @bookings.each do |booking| %>
+                <div class="card-trip" >
+                  <%= link_to(monument_path(booking.monument)) do  %>
+                    <div style="background-image: url('<%= cl_image_path booking.monument.photos.first.key %>'); background-size: cover; height: 220px">
+                    </div>
+                    <div class="card-trip-infos-container p-3 align-items-center">
+                      <div class="card-trip-infos p-0">
+                        <div>
+                          <h3><%=booking.monument.title %></h3>
+                        </div>
+                        <h5 class="h5-dashboard" ><%= number_with_delimiter(booking.total_price) %>$</h5>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="pt-2 justify-center"><%= booking.start_date.strftime("%d %b")%> <%= booking.end_date.strftime("- %d")%></h4>
+                        <div>
+                          <%= link_to "cancel", booking_path(booking), data: { confirm: "Are you sure you want to cancel your booking?" }, method: :delete, class: "btn-secondary" %>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
                 </div>
-                <h5 class="card-trip-pricing" ><%= number_with_delimiter(booking.monument.price) %>$</h5>
+              <% end %>
+            <% else %>
+              <div>
+                <%= link_to "find your monument now", monuments_path, class: "btn-flat" %>
               </div>
-              <h4 class="pt-2"><%= booking.start_date.strftime("From %d-%m-%Y")%> <%= booking.end_date.strftime("to %d-%m-%Y")%></h4>
-            </div>
+            <% end %>
           </div>
-          <% end %>
-        <% end %>
-      </div>
-<br>
-<br>
-<br>
-    <h2>my monuments </h2>
-    <br>
-    <div class="cards">
-        <% @monuments.each do |monument| %>
-        <%= link_to(monument_path(monument)) do  %>
-            <div class="card-trip " >
-              <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path monument.photos.first.key %>'); background-size: cover; height: 220px"></div>
-               <div class="card-trip-infos">
-                <div>
-                  <h3  ><%=monument.title %></h3>
-                </div>
-                <h5 class="card-trip-pricing" ><%= number_with_delimiter(monument.price) %>$</h5>
+        </div>
+
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="cards">
+            <% if !@monuments.empty? %>
+              <% @monuments.each do |monument| %>
+                  <div class="card-trip " >
+                    <%= link_to(monument_path(monument)) do %>
+                    <div style="background-image: url('<%= cl_image_path monument.photos.first.key %>'); background-size: cover; height: 220px"></div>
+                    <div class="card-trip-infos-container p-3 align-items-center">
+                      <div class="card-trip-infos p-0">
+                        <div>
+                          <h3 ><%=monument.title %></h3>
+                        </div>
+                      </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <h5 class="h5-dashboard" ><%= number_with_delimiter(monument.price) %>$</h5>
+                          <div>
+                            <%= link_to "remove", monument_path(monument), data: { confirm: "Are you sure you want to remove your monument?" }, method: :delete, class: "btn-secondary" %>
+                          </div>
+                        </div>
+                    </div>
+                <% end %>
+              <% end %>
+            <% else %>
+            <div>
+              <%= link_to "find your monument now", monuments_path, class: "btn-flat" %>
             </div>
-
-
+            <% end %>
           </div>
-          <% end %>
-        <% end %>
-      </div>
 
+        </div>
+      </div>
     </div>
   </div>
 </div>
+</div>
 
 <!-- on peut faire curent_user.bookings, au lieu de la méthode dashboard dans le controlleur -->
+
+
+
 
 
 
