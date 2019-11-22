@@ -1,31 +1,33 @@
-<div class="siema-home-container">
- <div class="siema siema-test">
-   <img src="https://cdn.pixabay.com/photo/2019/06/03/19/47/australia-4249691_960_720.jpg">
-   <img src="https://files.otis.com/otis/fr/fr/contentimages/empire-state-building-sunset-two-1920x1080.jpg">
+<div class="siema-home-container gradient">
+ <div class="siema siema-test ">
+   <img src="https://images.unsplash.com/photo-1483412919093-03a22057d0d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1725&q=80">
+   <img src="https://images.unsplash.com/photo-1566074563147-bfca4bd58cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">
+   <img src="https://images.unsplash.com/photo-1555088467-bb71ce62bac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80">
  </div>
  </div>
 
 
 
-<div class="banner img-home ">
+<div class="banner img-home h">
+  <div class ="text-home">
+    <div class="title-home col-6 offset-3">
+      <h1 class= "text-center mb-4">welcome to <span class="text-highlighted">monumental</span></h1>
+      <h7 >go monumental. rent a monument.</h7>
 
-  <div class="title-home col-6 offset-3">
-    <h1 class= "text-center mb-3">Welcome to <span class="text-highlighted">monumental</span></h1>
-    <h7 class ="mb-5">Go monumental. Rent a monument.</h7>
-
-    <div class="d-flex justify-content-center bd-highlight mt-3">
-      <div  class = "col-10 p-2 bd-highlight">
-        <%= form_tag monuments_path, method: :get do %>
-          <%= text_field_tag :query, params[:query],placeholder: "Find a monument", class: "form-control mb-2 search-test home "%>
+      <div class="d-flex justify-content-center bd-highlight mt-4">
+        <div  class = "col-8 p-2 bd-highlight">
+          <%= form_tag monuments_path, method: :get do %>
+            <%= text_field_tag :query, params[:query],placeholder: "Find a monument", class: "form-control mb-2 search-test home "%>
+        </div>
+        <div class = "p-2 bd-highlight">
+          <%= image_submit_tag("zoom-2.png", class: 'btn-flat search-btn-flat', alt: 'search')%>
+          <% end %>
+        </div>
       </div>
-      <div class = "p-2 bd-highlight">
-        <%= image_submit_tag("zoom-2.png", class: 'btn-flat search-btn-flat', alt: 'search')%>
-        <% end %>
-      </div>
-    </div>
 
-    <div class="btn-home">
-      <%= link_to "DISCOVER ALL MONUMENTS", monuments_path, class: 'btn-link home' %>
+      <div class="btn-home">
+        <%= link_to "discover all monuments", monuments_path, class: 'btn-home' %>
+      </div>
     </div>
   </div>
 </div>
