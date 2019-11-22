@@ -10,7 +10,7 @@ const initSiema = () => {
     draggable: true,
     multipleDrag: true,
     threshold: 20,
-    loop: false,
+    loop: true,
     rtl: false,
     onInit: () => {},
     onChange: () => {},

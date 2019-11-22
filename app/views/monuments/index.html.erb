@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container full-screen">
   <div class="row">
     <div  class="col-12">
         <div class="d-flex flex-row bd-highlight mt-3  ">
@@ -13,7 +13,12 @@
         </div>
 
         <div class ="create-btn-container mb-1 d-flex justify-content-between align-items-center" >
+          <% if params[:query] %>
           <h1> <%= pluralize @monuments.size, "result"%> for your monumental research</h1>
+          <% else%>
+          <h1>all monuments</h1>
+          <% end %>
+
           <div id="btn-width">
             <%= link_to "publish your monument", new_monument_path, class: "btn-secondary" %>
           </div>
