@@ -1,21 +1,23 @@
+<div class="main-container">
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%= cl_image_path @monument.photos.first.key, crop: :fill%>')">
-
   <div class="form-container">
     <div class="title col-md-9">
       <h1>rent & enjoy <%= @monument[:title] %></h1>
       <br>
     </div>
-
-  <div class="calendar col-md-3">
-   <h1>book now</h1>
-      <%= simple_form_for [@monument, @booking] do |f| %>
-        <%= f.input :start_date, as: :string, required: false, input_html: {id: "start_date"} %>
-        <%= f.input :end_date, as: :string, required: false, input_html: {id: "end_date"} %>
-        <%= f.submit 'book', class: "btn-flat" %>
-      <% end %>
-    </div>
   </div>
 </div>
+
+
+<div class="calendar col-md-4">
+     <h1>book now</h1>
+        <%= simple_form_for [@monument, @booking] do |f| %>
+          <%= f.input :start_date, as: :date, html5: true %>
+          <%= f.input :end_date, as: :date, html5: true %>
+          <%= f.submit 'book', class: "btn-flat" %>
+        <% end %>
+</div>
+
 
 
 <br>
@@ -24,34 +26,31 @@
   <div class="back-to-index">
     <%= link_to "back to list", monuments_path, class: "btn-link" %>
   </div>
+  <br>
   <div class="information">
-    <div class="description">
+    <div class="description mr-4">
       <ul id="list">
-        <li><%= @monument.description %></li>
+        <h2><strong><%= @monument.title %></strong></h2>
+        <br>
+        <li><h6><%= @monument.description %></h6></li>
         <br>
         <li><em><%= @monument.address %></em></li>
         <br>
-        <li><%= number_with_delimiter(@monument.price) %>$/day</li>
+        <li><strong><%= number_with_delimiter(@monument.price) %>$/day</strong></li>
       </ul>
     </div>
 
     <div class="siema-container">
-      <div class="siema">
+      <div class="siema siema-show">
         <% @monument.photos.each do |photo| %>
         <%= cl_image_tag photo.key %>
         <% end %>
       </div>
-      <div class="button">
-        <button class="prev">prev</button>
-        <button class="next">next</button>
-      </div>
     </div>
-
-
-    </div>
+    <br>
   </div>
 </div>
-<br>
+</div>
 
 
 
