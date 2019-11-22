@@ -20,12 +20,12 @@ class MonumentsController < ApplicationController
     else
       @monuments = Monument.all
     end
-
   end
 
   def show
     @monument = Monument.find(params[:id])
     @booking = Booking.new
+    @monuments = Monument.all
   end
 
   def edit

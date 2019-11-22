@@ -72,8 +72,7 @@ label {
   position: fixed;
   top: 145px;
   right: 10px;
-  border: 1px solid
-  #eaeaea;
+  background-color: rgba(0,0,0,0.5);
   border-radius: 0.25rem;
   padding: 1.5rem;
   margin-right: 40px;
@@ -81,6 +80,11 @@ label {
 
 .calendar-sticky {
   position: sticky;
+}
+
+.selection {
+  width: 68%;
+  height: 100%;
 }
 
 
