@@ -36,7 +36,7 @@
     </div>
 
     <div class="siema-container">
-      <div class="siema">
+      <div class="siema siema-show">
         <% @monument.photos.each do |photo| %>
         <%= cl_image_tag photo.key %>
         <% end %>
