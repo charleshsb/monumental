@@ -1,56 +1,78 @@
 <div class="main-container">
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%= cl_image_path @monument.photos.first.key, crop: :fill%>')">
-  <div class="form-container">
-    <div class="title col-md-9">
-      <h1>rent & enjoy <%= @monument[:title] %></h1>
-      <br>
-    </div>
-  </div>
-</div>
-
-
-<div class="calendar col-md-4">
-     <h1>book now</h1>
-        <%= simple_form_for [@monument, @booking] do |f| %>
-          <%= f.input :start_date, as: :date, html5: true %>
-          <%= f.input :end_date, as: :date, html5: true %>
-          <%= f.submit 'book', class: "btn-flat" %>
-        <% end %>
-</div>
-
-
-
-<br>
-
-<div class="container show-info-container">
-  <div class="back-to-index">
-    <%= link_to "back to list", monuments_path, class: "btn-link" %>
-  </div>
-  <br>
-  <div class="information">
-    <div class="description mr-4">
-      <ul id="list">
-        <h2><strong><%= @monument.title %></strong></h2>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url('<%= cl_image_path @monument.photos.first.key, crop: :fill%>')">
+    <div class="form-container">
+      <div class="title col-md-9">
+        <h1>rent & enjoy <%= @monument[:title] %></h1>
         <br>
-        <li><h6><%= @monument.description %></h6></li>
-        <br>
-        <li><em><%= @monument.address %></em></li>
-        <br>
-        <li><strong><%= number_with_delimiter(@monument.price) %>$/day</strong></li>
-      </ul>
-    </div>
-
-    <div class="siema-container">
-      <div class="siema siema-show">
-        <% @monument.photos.each do |photo| %>
-        <%= cl_image_tag photo.key %>
-        <% end %>
       </div>
     </div>
+  </div>
+
+  <div class="calendar col-md-4">
+    <h1>book now</h1>
+    <%= simple_form_for [@monument, @booking] do |f| %>
+    <%= f.input :start_date, as: :date, html5: true %>
+    <%= f.input :end_date, as: :date, html5: true %>
+    <%= f.submit 'book', class: "btn-flat" %>
+    <% end %>
+  </div>
+  <br>
+
+  <div class="container show-info-container">
+    <div class="back-to-index">
+      <%= link_to "back to list", monuments_path, class: "btn-link" %>
+    </div>
     <br>
+    <div class="information">
+      <div class="description mr-4">
+        <ul id="list">
+          <h2><strong><%= @monument.title %></strong></h2>
+          <br>
+          <li><h6><%= @monument.description %></h6></li>
+          <br>
+          <li><em><%= @monument.address %></em></li>
+          <br>
+          <li><strong><%= number_with_delimiter(@monument.price) %>$/day</strong></li>
+        </ul>
+      </div>
+
+      <div class="siema-container">
+        <div class="siema siema-show">
+          <% @monument.photos.each do |photo| %>
+          <%= cl_image_tag photo.key %>
+          <% end %>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="selection mr-4">
+        <h2>other monuments you may like</h2>
+        <br>
+        <% @monuments.sample(4).each do |monument| %>
+          <%= link_to(monument_path(monument)) do  %>
+            <div class="card-product">
+              <img src= '<%= cl_image_path monument.photos.first.key %>'>
+                <div class="card-product-infos">
+                  <h3 ><%=monument.title %></h3>
+                  <h5 class="price"><%= number_with_delimiter(monument.price) %>$/day</h5>
+                </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+
   </div>
 </div>
-</div>
+
+
+
+
+
+
+
 
 
 
