@@ -13,7 +13,7 @@ const priceForModal = () => {
   button.addEventListener('click', () => {
     const totalPrice = calculatePrice();
     const textPrice = document.getElementById('modalPrice');
-    const price = document.createTextNode(` ${totalPrice}€`);
+    const price = document.createTextNode(` ${totalPrice}$`);
     textPrice.appendChild(price);
   });
 }
