@@ -11,7 +11,8 @@
       <%= simple_form_for [@monument, @booking] do |f| %>
         <%= f.input :start_date, as: :string, required: false, input_html: {id: "start_date"} %>
         <%= f.input :end_date, as: :string, required: false, input_html: {id: "end_date"} %>
-        <%= f.submit 'book', class: "btn-flat" %>
+        <button type="button" id = "btn_modal" class="btn-flat" data-toggle="modal" data-target=".bd-example-modal-xl">book</button>
+        <%= f.submit 'book', id: "button-hidden" %>
       <% end %>
     </div>
   </div>
@@ -46,12 +47,32 @@
         <button class="next">next</button>
       </div>
     </div>
-
-
     </div>
   </div>
 </div>
 <br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-4 offset-4">
+      <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <h1>Congratulations <%= @user.first_name %>! 🎉</h1>
+            <p> you have booked <%= @monument.title %>, from <%= @monument.user.first_name %></p>
+            <p id = modalPrice>Total price :</p>
+            <div class="modal-footer">
+              <button type="button" class="btn-flat" data-dismiss="modal">close</button>
+              <button type="button" class="btn-flat" id="btn-confirm">confirm booking</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="monument" data-price="<%= @monument.price %>"></div>
 
 
 
