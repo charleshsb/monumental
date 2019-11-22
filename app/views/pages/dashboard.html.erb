@@ -4,10 +4,10 @@
 
       <ul class="nav nav-tabs list-inline tabs-underlined format-onglets" id="myTab" role="tablist">
         <li class="nav-item">
-          <a class="tab-underlined nav-linkd active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">my bookings</a>
+          <a class="tab-underlined nav-linkd active" id="home-tab onglet-color" style="color: #3D3D3D;" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">my bookings</a>
         </li>
         <li class="nav-item">
-          <a class="tab-underlined nav-linkd" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">my monuments</a>
+          <a class="tab-underlined nav-linkd" id="profile-tab onglet-color" style="color: #3D3D3D;" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">my monuments</a>
         </li>
       </ul>
 
@@ -25,12 +25,12 @@
                         <div>
                           <h3><%=booking.monument.title %></h3>
                         </div>
-                        <h5 class="card-trip-pricing" ><%= number_with_delimiter(booking.total_price) %>$</h5>
+                        <h5 class="h5-dashboard" ><%= number_with_delimiter(booking.total_price) %>$</h5>
                       </div>
                       <div class="d-flex justify-content-between align-items-center">
                         <h4 class="pt-2 justify-center"><%= booking.start_date.strftime("%d %b")%> <%= booking.end_date.strftime("- %d")%></h4>
                         <div>
-                          <%= link_to "cancel", booking_path(booking), data: { confirm: "Are you sure?" }, method: :delete, class: "btn-secondary" %>
+                          <%= link_to "cancel", booking_path(booking), data: { confirm: "Are you sure you want to cancel your booking?" }, method: :delete, class: "btn-secondary" %>
                         </div>
                       </div>
                     </div>
@@ -49,16 +49,22 @@
           <div class="cards">
             <% if !@monuments.empty? %>
               <% @monuments.each do |monument| %>
-                <%= link_to(monument_path(monument)) do  %>
                   <div class="card-trip " >
+                    <%= link_to(monument_path(monument)) do %>
                     <div style="background-image: url('<%= cl_image_path monument.photos.first.key %>'); background-size: cover; height: 220px"></div>
-                    <div class="card-trip-infos">
-                      <div>
-                        <h3  ><%=monument.title %></h3>
+                    <div class="card-trip-infos-container p-3 align-items-center">
+                      <div class="card-trip-infos p-0">
+                        <div>
+                          <h3 ><%=monument.title %></h3>
+                        </div>
                       </div>
-                      <h5 class="card-trip-pricing" ><%= number_with_delimiter(monument.price) %>$</h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <h5 class="h5-dashboard" ><%= number_with_delimiter(monument.price) %>$</h5>
+                          <div>
+                            <%= link_to "remove", monument_path(monument), data: { confirm: "Are you sure you want to remove your monument?" }, method: :delete, class: "btn-secondary" %>
+                          </div>
+                        </div>
                     </div>
-                  </div>
                 <% end %>
               <% end %>
             <% else %>
@@ -72,6 +78,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <!-- on peut faire curent_user.bookings, au lieu de la méthode dashboard dans le controlleur -->
