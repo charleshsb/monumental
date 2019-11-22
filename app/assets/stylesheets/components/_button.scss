@@ -19,6 +19,9 @@
 
 }
 
+
+
+
 .btn-flat:hover {
   color: $white !important;
   background: $purple;
@@ -69,10 +72,13 @@
 }
 
 .btn-link {
-  color: #311a49;
-  font-size: 13px;
+
   letter-spacing: 1px;
   font-weight: bolder;
+  color:$purple;
+  font-size: 16px;
+  text-decoration: underline;
+
 
 }
 
@@ -93,5 +99,7 @@
 
 .btn-home:hover {
   color:$purple;
+  transition: background 0.3s ease;
+
 
 }
