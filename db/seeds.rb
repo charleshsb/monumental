@@ -21,7 +21,7 @@ photos_array = []
 photos_array << URI.open('https://www.novastan.org/fr/wp-content/uploads/sites/4/2018/03/Image1-1.jpg')
 photos_array << URI.open('https://www.discoverwalks.com/blog/wp-content/uploads/2015/09/louvre-inside-big-1280x720.jpg')
 photos_array << URI.open('https://parismatch.be/app/uploads/2019/03/8042928_269fcfb0-52d1-11e9-9f7f-1957dc8adf55-1_1000x625-1100x715.jpg')
-the_louvre = Monument.new(user: charles, title: 'The Louvre', address: 'Paris, France', description: "TThe Louvre or the Louvre Museum, is the world's largest art museum and a historic monument in Paris, France. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement (district or ward). Approximately 38,000 objects from prehistory to the 21st century are exhibited over an area of 72,735 square metres (782,910 square feet). In 2018, the Louvre was the world's most visited art museum, receiving 10.2 million visitors.", price: 900000)
+the_louvre = Monument.new(user: charles, title: 'The Louvre', address: 'Paris, France', description: "The Louvre or the Louvre Museum, is the world's largest art museum and a historic monument in Paris, France. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement (district or ward). Approximately 38,000 objects from prehistory to the 21st century are exhibited over an area of 72,735 square metres (782,910 square feet). In 2018, the Louvre was the world's most visited art museum, receiving 10.2 million visitors.", price: 900000)
 photos_array.each_with_index do |photo, index|
   the_louvre.photos.attach(io: photo, filename: "the_louvre_#{index}.jpg", content_type: 'image/jpg')
 end
