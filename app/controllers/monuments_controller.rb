@@ -15,7 +15,12 @@ class MonumentsController < ApplicationController
   end
 
   def index
-    @monuments = Monument.all
+    if params[:query].present?
+      @monuments = Monument.search_by_title_and_address(params[:query])
+    else
+      @monuments = Monument.all
+    end
+
   end
 
   def show

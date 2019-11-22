@@ -1,20 +1,8 @@
 import "bootstrap";
-import Siema from 'siema';
 
-const mySiema = new Siema({
-  selector: '.siema',
-  duration: 200,
-  easing: 'ease-out',
-  perPage: 1,
-  startIndex: 0,
-  draggable: true,
-  multipleDrag: true,
-  threshold: 20,
-  loop: false,
-  rtl: false,
-  onInit: () => {},
-  onChange: () => {},
-  });
+import { mySiema } from "../plugins/siema";
+import { initFlatpickr } from "../plugins/flatpickr";
 
-setInterval(() => mySiema.next(), 3000)
 
+initFlatpickr();
+mySiema();

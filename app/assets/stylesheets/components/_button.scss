@@ -11,6 +11,13 @@
   border-width: 0px;
 
 }
+.btn-flat.search-btn-flat {
+  height: 38px;
+  padding: 9px 18px;
+  margin-left: -9px;
+
+
+}
 
 .btn-flat:hover {
   color: $white !important;
@@ -62,10 +69,17 @@
 }
 
 .btn-link {
-  color: #2B1040;
-  font-size: 12px;
+  color: #311a49;
+  font-size: 13px;
   letter-spacing: 1px;
   font-weight: bolder;
+
+}
+.btn-link.home {
+  color:$white;
+  font-size: 16px;
+  text-decoration: underline;
+
 }
 
 
